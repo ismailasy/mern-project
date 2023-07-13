@@ -1,0 +1,15 @@
+### GET All Users
+GET http://localhost:5000/api/users
+
+### GET User by ID
+GET http://localhost:5000/api/users/abc123
+
+### PUT Update User
+PUT http://localhost:5000/api/users/64aed0e0d095776af99a1d99
+Content-Type: application/json
+
+{
+  "username": "nouveau_nom",
+  "email": "nouvel_email@example.com",
+  "password": "nouveau_mot_de_passe"
+}
