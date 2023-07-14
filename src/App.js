@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState ,useEffect} from 'react';
+import Axios from "axios";
 
 function App() {
+  const [listOfUsers, setListOfUsers] =useState([{id:"1", name:"Ismaila",email:"ismaila@gmail.com", password:"passs123"}]);
+  useEffect(()=>{
+    Axios.get("http://localhost:5000/api/users").then((response)=>{
+          setListOfUsers(response.data);
+    });
+  },[]) ;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="UsersDisplay">
+            {listOfUsers.map((user)=>{
+              return (
+                <div>
+                  <h1>Name: {user.username}</h1>
+                  <h1>Email: {user.email}</h1>
+                  {/* <h1>Name: {user.name}</h1> */}
+                </div>
+               );
+            })}
+        </div>
     </div>
   );
 }
 
 export default App;
+ 
