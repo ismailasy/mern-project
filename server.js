@@ -25,6 +25,7 @@ mongoose.connect('mongodb://localhost/mernstack', { useNewUrlParser: true, useUn
     console.error('Error connecting to MongoDB', error);
   });
 
+  
 // Start the server
 const port = 5000;
 app.listen(port, () => {
