@@ -17,7 +17,7 @@ function App() {
                 <div>
                   <h1>Name: {user.username}</h1>
                   <h1>Email: {user.email}</h1>
-                  {/* <h1>Name: {user.name}</h1> */}
+                  <h1>Password: {user.password}</h1>
                 </div>
                );
             })}
