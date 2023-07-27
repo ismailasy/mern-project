@@ -3,7 +3,7 @@ import { useState ,useEffect} from 'react';
 import Axios from "axios";
 
 function App() {
-  const [listOfUsers, setListOfUsers] =useState([{id:"1", name:"Ismaila",email:"ismaila@gmail.com", password:"passs123"}]);
+  const [listOfUsers, setListOfUsers] =useState([]);
   useEffect(()=>{
     Axios.get("http://localhost:5000/api/users").then((response)=>{
           setListOfUsers(response.data);
